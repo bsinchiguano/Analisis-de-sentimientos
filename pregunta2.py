@@ -239,3 +239,30 @@ print("Tweets Negativos: {0:.3f}".format(porcentaje(cont_neg,test)),"%")
 print("Tweets Positivos:{0:.3f}".format(porcentaje(cont_posi,test)),"%")
 
  
+    
+# gráficos
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+#gráfica de  "x" y "y" de training
+#para coorroborar que se está tomando más datos que el test
+plt.figure(figsize=(10,6))
+plt.plot(x,y)
+plt.xlabel("x training (TF-IDF aplicado al documento)")
+plt.ylabel("y training (Sentimiento)")
+plt.grid() # para poner recuadros
+plt.savefig('GR_training.jpg')
+
+#gráfica de  "x" y "y" de training
+#para coorroborar que se está tomando menos datos que el test
+#plt.subplot(3,3,3)
+plt.figure(figsize=(10,6))
+plt. plot(x_test,y_test)
+plt.xlabel("x test (TF-IDF aplicado al documento)")
+plt.ylabel("y test (Sentimiento)")
+plt.grid() # para poner recuadros
+plt.savefig('GR_test.jpg')
+
+
+#plt.show() para mostrar la gráfica en pantalla
+#plt.lion() para mostrar gráfica sin bloquear linea de comandos
